@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 
+	@ abacus plugin for simple calculator
+-->
+	<title>Calculator</title>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="jquery.abacus.min.js">
+		
+	</script>
+</head>
+<body>
+	<table>
+		
+		<thead>
+			<tr>
+				<th>Calculator</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>Name</td>
+				<td>Quantity</td>
+				<td>Price</td>
+			</tr>
+			<tr>
+				<td><input type="text" id="quantityName" class="qname"></td>
+				<td><input type="text" id="quantity" class="calcsection"></td>
+				<td><input type="text" id="price" class="calcsection"></td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		$('.calcsection').abacus();
+	</script>
+</body>
+</html>
