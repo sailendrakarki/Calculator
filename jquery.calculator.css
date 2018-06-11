@@ -1,4 +1,11 @@
 /* Main style sheet for jQuery Calculator v2.0.1 */
+.calculator-hide-keyboard> .calculator-row {
+display: none;
+}
+.calculator-hide-keyboard> .calculator-result {
+width: 164px;
+border: none;
+}
 div.is-calculator, span.is-calculator {
 	position: relative;
 }

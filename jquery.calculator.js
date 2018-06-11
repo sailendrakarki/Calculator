@@ -101,7 +101,7 @@
 			@property [onButton=null] {buttonCallback} Define a callback function when a button is activated.
 			@property [onClose=null] {closeCallback} Define a callback function when the panel is closed. */
 		defaultOptions: {
-			showOn: 'focus',
+			showOn: 'operator',
 			buttonImage: '',
 			buttonImageOnly: false,
 			isOperator: null,
