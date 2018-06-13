@@ -8,9 +8,7 @@
     <link rel="shortcut icon" type="image/png" href="calculator-icon.png"/>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     
-    <!-- keith plugin for calculator-->
-    <script src="js/jquery.plugin.js"></script>
-    <script src="js/jquery.calculator.js"></script>
+   
     
     <!--  simple calculator -->
     <script src="js/jquery.abacus.min.js"></script>
@@ -29,8 +27,7 @@
                 <td scope="col">Item</td>
                 <td scope="col">Quantity</td>
                 <td scope="col">Price</td>
-                <td scope="col">
-                Shipping</td>
+                <td scope="col">Shipping</td>
                 <td scope="col">Result</td>
             
             </tr>
@@ -40,8 +37,8 @@
             <tr>
                 <td><input data-step="2" data-intro="Enter Item Name" type="text" data-bind="value:itemName"></td>
                 <td><input  data-step="3" data-intro="Calculator features:popup keypad" type="text" class="calcsection"  data-bind="value:quantityData, valueUpdate:'afterkeydown'"></td>
-                <td><input  data-step="4" data-intro="Calculator features:inline" type="text" class="calcsection1" data-bind="value:priceData,valueUpdate:'afterkeydown'"></td>
-                <td><input  data-step="5" data-intro="Calculator features:popup result section" type="text" class="calcsection2"  data-bind="value:shippingData, valueUpdate:'afterkeydown'"></td>
+                <td><input  data-step="4" data-intro="Calculator features:inline" type="text" class="calcsection" data-bind="value:priceData,valueUpdate:'afterkeydown'"></td>
+                <td><input  data-step="5" data-intro-group="new" data-intro="Calculator features:popup result section" type="text" class="calcsection"  data-bind="value:shippingData, valueUpdate:'afterkeydown'"></td>
 
                 <td><input type="text"  data-bind="value:totalData"></td>
             </tr>
@@ -58,13 +55,26 @@
     <script type="text/javascript" src="introjs/intro.js"></script>
     
     <script type="text/javascript">
+        var introguide = introJs();
         $(document).ready(function(){
-            introJs().start();
-            $('.calcsection').calculator(); 
-            $('.calcsection1').abacus();
-            $('.calcsection2').calculator({calculatorClass:'calculator-hide-keyboard'});
-    
+            $('.calcsection').abacus();
+            
+            //var doneTour = localStorage.getItem('EventTour') === 'Completed';
+           
+            //if (doneTour){
+            // return;
+            // }
+           // else {
+                introguide.start('new');
+                
+                //introguide.oncomplete(function () {
+                   // localStorage.setItem('EventTour', 'Completed');
+               // });
 
+                //introguide.onexit(function () {
+                    //localStorage.setItem('EventTour', 'Completed');
+                //});
+             //}
         });
         
         
@@ -86,9 +96,8 @@
             
             self.addfield = function() {
                 self.fieldset.push(new fieldDescription());
-                $('.calcsection1').abacus();
-                $('.calcsection').calculator();
-                $('.calcsection2').calculator({calculatorClass:'calculator-hide-keyboard'});
+                $('.calcsection').abacus();
+               
             }
         }
         
